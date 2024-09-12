@@ -34,7 +34,8 @@ export default function CheckOutPage() {
     try {
       const res = await createOrder(data).unwrap();
       if (res.success) {
-        window.location.href = res?.data?.url;
+        // window.location.href = res?.data?.url;
+        window.location.replace(res?.data?.url);
       } else {
         console.error("Order creation failed:", res.message);
       }
